@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BaseDatosMenuCompletoKotlin</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Manejo BBDD</string>
+    <string name="nom">N:</string>
+    <string name="tel">T:</string>
+    <string name="mail">M@:</string>
+    <string name="ins">Ins</string>
+    <string name="act">Act</string>
+    <string name="elim">Elim</string>
+    <string name="constodos">Cons. todos</string>
+    <string name="cons1">Cons. 1</string>
+    <string name="tablaV">Tabla vacia</string>
+    <string name="noReg">No hay ningun registro con este nombre</string>
+    <string name="correctIn">Registro insertado correctamente ! - </string>
+    <string name="correctEl">Registro eliminado correctamente ! - </string>
+    <string name="correctAct">Registro actualizado correctamente ! - </string>
+</resources>
