@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import udl.eps.demos.basedatosmenucompleto_kotlin.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -30,12 +31,9 @@ class MainActivity : AppCompatActivity() {
             nuevoRegistro.put("nombre", nom)
             nuevoRegistro.put("telefono", tel)
             nuevoRegistro.put("email", mail)
-            if (db.insert(
-                    "Usuarios",
-                    null,
-                    nuevoRegistro
-                ) > 0
-            ) showToast(getString(R.string.correctIn)) else showToast(getString(R.string.errIn))
+            val cont = db.insert("Usuarios", null, nuevoRegistro)
+            if (cont > 0) showToast(getString(R.string.correctIn) + cont)
+            else showToast(getString(R.string.errIn))
         }
 
         binding.btnActualizar.setOnClickListener { //Recuperamos los valores de los campos de texto
@@ -47,16 +45,15 @@ class MainActivity : AppCompatActivity() {
             valores.put("telefono", tel)
             valores.put("email", mail)
             val cont = db.update("Usuarios", valores, "nombre=?", args)
-            if (cont > 0) showToast(
-                getString(R.string.correctAct) + Integer.toString(cont)
-            ) else showToast(getString(R.string.noReg))
+            if (cont > 0) showToast(getString(R.string.correctAct) + cont)
+            else showToast(getString(R.string.noReg))
         }
 
         binding.btnEliminar.setOnClickListener { //Recuperamos los valores de los campos de texto
             val nom = binding.txtNom.getText().toString()
             val args = arrayOf(nom)
             val cont = db.delete("Usuarios", "nombre=?", args)
-            if (cont > 0) showToast(getString(R.string.correctEl) + Integer.toString(cont))
+            if (cont > 0) showToast(getString(R.string.correctEl) + cont)
             else showToast(getString(R.string.noReg))
         }
 
