@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                     null,
                     nuevoRegistro
                 ) > 0
-            ) showToast(getString(R.string.correctIn)) else showToast("La operacion de insercion ha fallado")
+            ) showToast(getString(R.string.correctIn)) else showToast(getString(R.string.errIn))
         }
 
         binding.btnActualizar.setOnClickListener { //Recuperamos los valores de los campos de texto
